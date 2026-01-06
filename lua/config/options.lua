@@ -1,4 +1,14 @@
+-- options.lua
+-- Cephy314/nvim2
+
+-- :NOTE Helpers
+local g = vim.g
 local o = vim.opt
+
+-- Disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 
 o.clipboard 	 = "unnamed,unnamedplus"	-- Copy-paste between vim and everything else
 o.cmdheight	 = 0				-- Give more space for displaying messages
@@ -45,6 +55,6 @@ o.conceallevel = 2
 o.concealcursor = ""
 o.encoding = "utf-8"
 o.errorbells = false
-o.fileencoding = "utf-8"
+-- o.fileencoding = "utf-8"
 o.incsearch = true
 o.showmode = false
