@@ -1,6 +1,12 @@
 return {
 	"stevearc/conform.nvim",
-	opts = {
+	event = "VeryLazy",
+  opts = {
+    format = {
+      timeout_ms = 2000,
+      async = false,
+      quiet = false,
+    },
 		formatters_by_ft = {
 			lua = { "stylua" },
 			rust = { "rustfmt" },
@@ -12,10 +18,12 @@ return {
 			scss = { "biome", "biome-organize-imports" },
 		},
 		setup = function()
+      local formatting = require('plugins.configs.mason-lspconfig.formatting')
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*",
-				callback = function(agrs)
-					require("conform").format({ bufnr = agrs.buf })
+        group = formatting.group,
+				callback = function(args)
+					formatting.auto_format(args.buf)
 				end,
 			})
 		end,

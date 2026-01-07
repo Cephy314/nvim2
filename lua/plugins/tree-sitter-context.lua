@@ -3,11 +3,23 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
     branch = "main",
     dependencies = { "nvim-treesitter/nvim-treesitter", branch = "main" },
+    event = "VeryLazy",
+  enabled = false,
     init = function()
         vim.g.no_plugin_maps = true
     end,
     config = function()
         require("nvim-treesitter-textobjects").setup {
+            enable = true,
+        max_lines = 0,
+      min_window_height = 0,
+      line_numbers = true,
+      multiline_threshold = 20,
+      trim_scope = 'outer',
+      mode = "cursor",
+      separator = nil,
+      zindex = 20,
+      onattach = nil,
             select = {
                 -- Automatically jump forward to textobj, similar to targets.vim
                 lookahead = true,

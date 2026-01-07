@@ -3,6 +3,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   lazy = false,
   build = ":TSUpdate",
+  dependencies = {"nvim-treesitter/nvim-treesitter-textobjects", "RRethy/nvim-treesitter-endwise",},
   config = function()
     local ts = require 'nvim-treesitter'
     local parsers = {
@@ -57,8 +58,19 @@ return {
 
     vim.api.nvim_create_autocmd('FileType', {
       pattern = parsers,
-      callback = function()
-        vim.treesitter.start()
+      callback = function(args)
+        local buf = args.buf
+        local filetype = args.match
+
+        -- Check if parser exists for the current language
+        local language = vim.treesitter.language.get_lang(filetype) or filetype
+        if not vim.treesitter.language.add(language) then
+          return
+        end
+
+        vim.treesitter.start(buf, language)
+
+        vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
       end,
     })
   end,
