@@ -12,6 +12,7 @@ g.loaded_netrwPlugin = 1
 
 o.clipboard 	 = "unnamed,unnamedplus"	-- Copy-paste between vim and everything else
 o.cmdheight	 = 0				-- Give more space for displaying messages
+o.colorcolumn    = "100"				-- Line length marker at 100 columns
 o.completeopt	 = "menu,menuone,preview"	-- Better autocompletion
 o.cursorline	 = true				-- Highligh cursor line
 o.emoji		 = false				-- Fix emoji display

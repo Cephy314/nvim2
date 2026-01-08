@@ -48,9 +48,7 @@ return {
       },
     },
   },
-  config = function()
-    for _, server in ipairs(ensure) do
-      vim.lsp.enable(server.lang)
-    end
-  end,
+  opts = {
+    automatic_enable = true
+  }
 }
