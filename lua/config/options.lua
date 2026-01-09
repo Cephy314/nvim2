@@ -23,6 +23,7 @@ o.foldlevel	 = 99				-- Using ufo provider need a large value
 o.foldlevelstart = 99				-- Expand all folds by default
 o.ignorecase	 = true				-- Needed for smartcase
 o.laststatus = 3	-- global status line
+o.linebreak = true -- wrap lines at convenient points
 o.mouse = "a" -- enable mouse mode
 o.number = true -- show line numbers
 o.pumheight = 10 -- max number of completions in menu

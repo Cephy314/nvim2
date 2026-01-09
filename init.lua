@@ -8,3 +8,4 @@ require('config.options')
 --require('config.keymaps')
 vim.cmd[[colorscheme tokyonight]]
 require('config.keymap')
+require('config.autocmds')
