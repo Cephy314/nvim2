@@ -18,7 +18,7 @@ return {
 	  lazy = false,
 	  priority = 1000,
 	  opts = {
-	    style = "dimmed",
+	    style = "dark",
 	    styles = {
 	      comments = { italic = true },
 	      keywords = { italic = true },

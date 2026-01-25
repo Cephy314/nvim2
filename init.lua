@@ -6,6 +6,6 @@ require('config.lazy')
 require('config.globals')
 require('config.options')
 --require('config.keymaps')
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme teide]]
 require('config.keymap')
 require('config.autocmds')

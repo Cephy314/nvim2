@@ -39,7 +39,10 @@ return {
     },
   },
     explorer = { enabled = true },
-    picker = { enabled = true },
+    picker = { 
+      enabled = true,
+
+    },
     quickfile = { enabled = true },
     keymaps = { enabled = true },
     scope = { enabled = true },
@@ -50,4 +53,12 @@ return {
     toggle = { enabled = true },
     words = { enabled = true },
   },
+  keys = {
+    {"<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+    {"<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers"},
+    {"<leader>fg", function() Snacks.picker.grep() end, desc = "Grep"},
+    {"<leader>:", function() Snacks.picker.command_history() end, desc = "Command History"},
+    {"<leader>n", function() Snacks.picker.notification_history() end, desc = "Notification History"},
+    
+  }
 }
